@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas resize</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <canvas></canvas>
+    <div id="modal">
+      <h1 class="modal-title">How to Play</h1>
+      <ul style="font-size: 26px;">
+        <div>- Left click to start the cast</div>
+        <div>- Left click again to release at the optimal time (red: poor) (orange: okay) (green: super)</div>
+        <div>- Different casts give you different pools of fish</div>
+        <div>- When you cast you will instantly hook a fish</div>
+        <div>- Letters will pop up, you must press the correct letters to catch the fish</div>
+        <div>- Rarer fish will make longer sequences of letters and score more points</div>
+      </ul>
+      <hr style="margin: 10px 50px 0 50px;">
+      <h2 style="margin: 50px 0 0 20px;">Press anything to continue...</h2>
+    </div>
+    <div id="modal-game-ended">
+      <h1 class="modal-title">Would you like to play again?</h1>
+      <ul style="font-size: 26px;">
+        <div>Your score was :</div><div id="score"></div>
+      </ul>
+      <hr style="margin: 10px 50px 0 50px;">
+      <h2 style="margin: 50px 0 0 20px;">Press anything to continue...</h2>
+    </div>
+    <div class="assets noSelect">
+        <div class="letters">
+          <div id="letterW">W</div>
+          <div id="letterA">A</div>
+          <div id="letterS">S</div>
+          <div id="letterD">D</div>
+        </div>
+    
+        <img src="assets/Cloud1.png" id="cloud1" />
+        <img src="assets/Cloud2.png" id="cloud2" />
+        <img src="assets/Cloud3.png" id="cloud3" />
+        <img src="assets/Cloud4.png" id="cloud4" />
+        <img src="assets/Cloud5.png" id="cloud5" />
+        <img src="assets/Cloud6.png" id="cloud6" />
+        <img src="assets/Cloud7.png" id="cloud7" />
+        <img src="assets/Cloud8.png" id="cloud8" />
+        <img src="assets/Cloud9.png" id="cloud9" />
+        <img src="assets/Cloud10.png" id="cloud10" />
+        <img src="assets/Cloud11.png" id="cloud11" />
+        <img src="assets/Cloud12.png" id="cloud12" />
+        <img src="assets/Cloud13.png" id="cloud13" />
+        <img src="assets/Cloud17.png" id="cloud14" />
+        
+        <div class="fish">
+          <img src="assets/deadFish.png" id="deadFish1" />
+          <img src="assets/deadFish2.png" id="deadFish2" />
+          <img src="assets/redFish.png" id="redFish" />
+          <img src="assets/blueFish.png" id="blueFish" />
+          <img src="assets/purpleFish.png" id="purpleFish" />
+          <img src="assets/greenFish.png" id="greenFish" />
+          <img src="assets/pufferFish.png" id="pufferFish" />
+          <img src="assets/eel.png" id="eel" />
+        </div>
+    
+        <img src="assets/number0.png" id="number0" />
+        <img src="assets/number1.png" id="number1" />
+        <img src="assets/number2.png" id="number2" />
+        <img src="assets/number3.png" id="number3" />
+        <img src="assets/number4.png" id="number4" />
+        <img src="assets/number5.png" id="number5" />
+        <img src="assets/number6.png" id="number6" />
+        <img src="assets/number7.png" id="number7" />
+        <img src="assets/number8.png" id="number8" />
+        <img src="assets/number9.png" id="number9" />
+        <img src="assets/colon.png" id="colon" />
+        <img src="assets/plusSign.png" id="plusSign" />
+        
+    </div>
+    <div class="wave"></div>
+    <script src="canvas.js"></script>
+  </body>
+</html>
