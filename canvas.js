@@ -229,10 +229,7 @@ function fishing(castTypeParam) {
   context.rotate(5 * (Math.PI / 180));
   context.translate(-(x + 1 / 2), -(x + 1 / 2));
 
-  // THIS IS THE STUFF YOU WANT ROTATED
-  // do whatever it is you need to do here, moveto and lineto is all i used
-  // I would expect anything to work. use normal grid coordinates as if its a
-  // normal 0,0 in the top left kind of grid
+  //ROTATED
 
   context.beginPath();
   context.moveTo(window.innerWidth - 200, window.innerHeight - 200);
@@ -357,8 +354,8 @@ function catchFish(castType) {
 }
 
 function sequenceUsage() {
-  // should also add some kind of timer for losing a fish
-  // also too many incorrect choices should lose fish
+  // could also add some kind of timer for losing a fish
+  // also too many incorrect choices could lose fish
   console.log(sequence);
   if (sequence.length === 0) {
     if (!gameEnded) {
@@ -450,19 +447,13 @@ function gameTimer() {
       setTimeout(() => {
         gameEndedModal.addEventListener("click", function () {
           gameEndedModal.style.visibility = "hidden";
-          // gameEnded = true;
-          // sequence = [];
-          // sequenceUsage();
           clearInterval(interval);
         });
         gameEndedModal.addEventListener("keypress", function () {
           gameEndedModal.style.visibility = "hidden";
-          // gameEnded = true;
-          // sequence = [];
-          // sequenceUsage();
           clearInterval(interval);
         });
-      }, 2000);
+      }, 3000);
       return;
     }
   }, 1000);
@@ -511,10 +502,8 @@ function init() {
     context.strokeStyle = "black";
     context.stroke();
   }
+
   // casting reinit
-  // Having trouble reinitializing the strength bar
-  // uses x and when x is resized the bar is set to left poor
-  // need a better way to find the old position
   if (castType === "super") {
     console.log("SUPER ");
     context.fillStyle = "rgba(219, 0, 18, 1)";
@@ -550,8 +539,7 @@ function init() {
   // dock
   context.globalCompositeOperation = "destination-over";
   context.fillStyle = "rgba(164,116,73, .9)";
-  // width - 36.7%
-  // context.fillRect(window.innerWidth - window.innerWidth * 0.367, window.innerHeight - 170, 800, 200);
+  
   context.fillRect(
     window.innerWidth - window.innerWidth * 0.2,
     window.innerHeight - 180,
@@ -560,14 +548,8 @@ function init() {
   );
 
   // sky
-  // context.globalCompositeOperation = "destination-over";
   context.fillStyle = "rgba(135, 206, 250, .5)";
   context.fillRect(0, 0, window.innerWidth, window.innerHeight - 140);
-
-  // new sky addition maybe
-  // context.globalCompositeOperation = "destination-over";
-  // context.fillStyle = "rgba(191, 191, 191, 1)"
-  // context.fillRect(0, 0, window.innerWidth, window.innerHeight)
 }
 
 function numberDecider(placement) {
@@ -621,7 +603,6 @@ function animate() {
   }
 
   if (fishAnimate === true) {
-    // context.drawImage(fishCaught[fishCaught.length - 1].el, fishX, fishY)
     fishCaught[fishCaught.length - 1].el.style.left = fishX + fishDx + "%";
     fishX += fishDx;
     if (fishX >= 45) {
@@ -699,7 +680,6 @@ function animate() {
   }
 
   if (firstCast === true && theCast) {
-    console.log("TIMER ON");
     firstCast = false;
     gameTimer();
     fishing(false);
@@ -731,4 +711,3 @@ function animate() {
 init();
 animate();
 
-// WASD game
